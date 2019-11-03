@@ -1,0 +1,18 @@
+package main
+
+func binarySearch(arr []int, val int) int {
+	low := 0
+	high := len(arr) - 1
+	for low <= high {
+		center := (int)((low + high) / 2)
+		if arr[center] == val {
+			return center
+		}
+		if arr[center] > val {
+			high = center - 1
+		} else {
+			low = center + 1
+		}
+	}
+	return 0
+}
